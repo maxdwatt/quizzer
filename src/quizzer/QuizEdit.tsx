@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Question } from "../interfaces/question";
 import { Quiz } from "../interfaces/quiz";
-import { QuestionEdit } from "./QuestionEdit";
+//import { QuestionEdit } from "./QuestionEdit";
 
 import "./QuizEdit.css";
 
-export const QuizEdit = ({
+/*export const QuizEdit = ({
     quiz,
     editQuiz,
     deleteQuiz,
@@ -163,4 +163,4 @@ export const QuizEdit = ({
             </div>
         </div>
     );
-};
+};*/

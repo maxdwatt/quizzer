@@ -5,7 +5,7 @@ import { Form, Button } from "react-bootstrap";
 import "./QuizQuestion.css";
 type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
 
-export const QuizQuestion = ({
+/*export const QuizQuestion = ({
     index,
     question,
     submitted,
@@ -83,4 +83,4 @@ export const QuizQuestion = ({
             </div>
         </>
     );
-};
+};*/

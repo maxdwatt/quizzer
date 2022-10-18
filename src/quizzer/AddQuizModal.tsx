@@ -1,24 +1,30 @@
 import React, { useState } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
+import { Quiz } from "../interfaces/quiz";
+//import {Quizzer} from "./Quizzer";
 
 export const AddQuizModal = ({
     show,
     handleClose,
-    addQuiz
+    quiz
 }: {
+    handleClose: boolean;
+    quiz: Quiz;
+    show: boolean;
 }) => {
     const [title, setTitle] = useState<string>("Example Quiz");
+    const[body,setBody] = useState<string>("Example Description");
 
-    const saveChanges = () => {
-        addQuiz(title, body);
+    /*const saveChanges = () => {
+        addQuiz(quiz, title, body);
         setTitle("Example Quiz");
         setBody("Example Description");
         handleClose();
-    };
+    };*/
 
     return (
         <div>
-            <Modal show={show} onHide={handleClose} animation={false}>
+            <Modal show={show} /*onHide={handleClose}*/ animation={false}>
                 <Modal.Header closeButton>
                     <Modal.Title>Add New Quiz</Modal.Title>
                 </Modal.Header>
@@ -36,17 +42,17 @@ export const AddQuizModal = ({
                             as="textarea"
                             rows={3}
                             value={body}
-                            onChange={}
+                            //onChange={}
                         ></Form.Control>
                     </Form.Group>
                 </Modal.Body>
-                <Modal.Footer>
+                {/* <Modal.Footer>
                     <Button
                         variant="secondary"
                         onClick={() => {
                             setTitle("Example Quiz");
                             setBody("Example Description");
-                            handleClose();
+                            //handleClose();
                         }}
                     >
                         Close
@@ -54,7 +60,7 @@ export const AddQuizModal = ({
                     <Button variant="primary" onClick={saveChanges}>
                         Save Changes
                     </Button>
-                </Modal.Footer>
+                </Modal.Footer> */}
             </Modal>
         </div>
     );
