@@ -30,7 +30,9 @@ export const Quizzer = () => {
         );
     }
 
-    function addQuiz(title: string, body: string) {
+    function addQuiz( newQuiz: Quiz, title: string, body: string) {
+        newQuiz.title = title;
+        newQuiz.body = body;
         setQuizzes([...quizzes, newQuiz]);
     }
 
@@ -38,22 +40,26 @@ export const Quizzer = () => {
         setQuizzes(quizzes.filter((q: Quiz): boolean => qId !== q.id));
     }
 
-    const handleShowModal = () => setShowAddModal(true);
-    const handleCloseModal = () => setShowAddModal(false);
+    const handleShowModal = () => {
+        setShowAddModal(true);
+    }
+    const handleCloseModal = () => {
+        setShowAddModal(false);
+    }
 
     return (
         <div className="quizzer">
             <QuizList
                 quizzes={quizzes}
-                editQuiz={editQuiz}
-                deleteQuiz={deleteQuiz}
-                showModal={handleShowModal}
+                //editQuiz={editQuiz}
+                //deleteQuiz={deleteQuiz}
+                //showModal={handleShowModal}
             ></QuizList>
-            <AddQuizModal
+            {/* <AddQuizModal
                 show={showAddModal}
                 handleClose={handleCloseModal}
                 addQuiz={addQuiz}
-            ></AddQuizModal>
+            ></AddQuizModal> */}
             <hr />
             <h2 style={{ color: "white" }}>Application Sketch</h2>
             {/* <img src={require("./sketchFINAL.jpg")} /> */}

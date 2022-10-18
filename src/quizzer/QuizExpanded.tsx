@@ -4,9 +4,9 @@ import { Question } from "../interfaces/question";
 import { Quiz } from "../interfaces/quiz";
 
 import "./QuizExpanded.css";
-import { QuizQuestion } from "./QuizQuestion";
+//import { QuizQuestion } from "./QuizQuestion";
 
-export const QuizExpanded = ({
+/*export const QuizExpanded = ({
     quiz,
     editQuiz,
     resetView,
@@ -110,4 +110,4 @@ export const QuizExpanded = ({
             </div>
         </>
     );
-};
+};*/

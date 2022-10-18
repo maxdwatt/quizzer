@@ -6,8 +6,10 @@ import { Question } from "../interfaces/question";
 
 export const QuizCard = ({
     quiz,
-    handleClick
-}: {) => {
+    //handleClick
+}: {
+    quiz: Quiz;
+}): JSX.Element => {
     const filteredQuestions = quiz.questionList.filter(
         (q: Question): boolean =>
             (quiz.published && q.published) || !quiz.published
@@ -18,9 +20,9 @@ export const QuizCard = ({
             <div className="d-flex align-items-baseline">
                 <h3
                     className="title"
-                    onClick={() => {
+                    /*onClick={() => {
                         handleClick(quiz.id);
-                    }}
+                    }}*/
                 >
                     {quiz.title}
                 </h3>
