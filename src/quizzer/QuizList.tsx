@@ -36,9 +36,9 @@ export const QuizList = ({
                             //handleClick={handleQuizView}
                         ></QuizCard>
                     ))}
-                    <Button className="add_btn" /*onClick={showModal}*/>
+                    {/* <Button className="add_btn" onClick={showModal}>
                         Add New Quiz
-                    </Button>
+                    </Button> */}
                 </>
             )}
             {/* {quizzes.map((quiz: Quiz) => {
