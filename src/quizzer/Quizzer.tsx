@@ -55,6 +55,7 @@ export const Quizzer = () => {
             <Button className="add_btn" onClick={handleShowModal}>Add New Quiz</Button>
             {showAddModal&&
             <AddQuizModal
+                //here we want to make it so the items aren't held in addquizmodel but are here
             ></AddQuizModal>
             }
             <hr />
