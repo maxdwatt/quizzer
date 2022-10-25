@@ -1,26 +1,32 @@
 import React, { useState } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
-import { Quiz } from "../interfaces/quiz";
-//import {Quizzer} from "./Quizzer";
 
-export const AddQuizModal = () => {
+export const AddQuizModal = ({
+    show,
+    handleClose,
+    addQuiz
+}: {
+    show: boolean;
+    handleClose: boolean;
+    addQuiz: (title: string, body: string) => void;
+}) => {
     const [title, setTitle] = useState<string>("Example Quiz");
-    const[body,setBody] = useState<string>("Example Description");
-    const[show,setShow] = useState<boolean>(true);
+    const [body, setBody] = useState<string>("Example Body");
 
     const saveChanges = () => {
-        //addQuiz(quiz, title, body);
+        addQuiz(title, body);
         setTitle("Example Quiz");
         setBody("Example Description");
-        handleClose();
+        show = false;
     };
-    function handleClose() {
-        setShow(false);
+    const handledClose = () => {
+        show = false;
     }
+
     return (
         <div>
-            <Modal show={show} onHide={handleClose} animation={false}>
-                <Modal.Header >
+            <Modal show={show} onHide={handledClose} animation={false}>
+                <Modal.Header closeButton>
                     <Modal.Title>Add New Quiz</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
@@ -37,9 +43,8 @@ export const AddQuizModal = () => {
                             as="textarea"
                             rows={3}
                             value={body}
-                            onChange={(
-                                e: React.ChangeEvent<HTMLInputElement>
-                            ) => setBody(e.target.value)}
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>
+                                )=>setBody(e.target.value)}
                         ></Form.Control>
                     </Form.Group>
                 </Modal.Body>
@@ -49,7 +54,7 @@ export const AddQuizModal = () => {
                         onClick={() => {
                             setTitle("Example Quiz");
                             setBody("Example Description");
-                            handleClose();
+                            show = handleShow;
                         }}
                     >
                         Close

@@ -21,7 +21,7 @@ const QUIZZES = sample.map(
     })
 );
 
-export const Quizzer = () => {
+export function Quizzer(): JSX.Element {
     const [quizzes, setQuizzes] = useState<Quiz[]>(QUIZZES);
     const [showAddModal, setShowAddModal] = useState(false);
 
@@ -53,9 +53,11 @@ export const Quizzer = () => {
                 //showModal={handleShowModal}
             ></QuizList>
             <Button className="add_btn" onClick={handleShowModal}>Add New Quiz</Button>
-            {showAddModal&&
+            {showAddModal &&
             <AddQuizModal
-                //here we want to make it so the items aren't held in addquizmodel but are here ??
+                show = {showAddModal}
+                handleShow = {showAddModel}
+                addQuiz = {addQuiz}
             ></AddQuizModal>
             }
             <hr />
