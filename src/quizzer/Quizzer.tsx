@@ -40,9 +40,8 @@ export function Quizzer(): JSX.Element {
         setQuizzes(quizzes.filter((q: Quiz): boolean => qId !== q.id));
     }
 
-    const handleShowModal = () => {
-        setShowAddModal(showAddModal === true ? false : true);
-    }
+    const handleShowModal = () => setShowAddModal(true);
+    const handleCloseModal = () => setShowAddModal(false);
 
     return (
         <div className="quizzer">
@@ -55,8 +54,8 @@ export function Quizzer(): JSX.Element {
             <Button className="add_btn" onClick={handleShowModal}>Add New Quiz</Button>
             {showAddModal &&
             <AddQuizModal
-                show = {showAddModal}
-                handleShow = {showAddModel}
+                show = {true}
+                //handleClose = {showAddModal}
                 addQuiz = {addQuiz}
             ></AddQuizModal>
             }
